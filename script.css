@@ -1,0 +1,144 @@
+*{
+    padding: 0;
+}
+
+body{
+    /* IOS Font */
+    font-family: 'SF Pro Display';
+
+    /* colours */
+    background-color: #000000;
+
+    /* Items positioning */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+}
+
+/* the numbers */
+span{
+    color: #B9B9B9;
+    font-size: 30px;
+}
+
+/* the clock */
+#clock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 80vh;
+}
+
+#clock div {
+  width: 500px;
+  height: 80vh;
+  padding: 0px 20px;
+  border-radius: 50px;
+  background: linear-gradient(
+    to bottom,
+    #161616 0%,
+    #0D0D0D 100%
+  );
+  font-family: 'SF Pro Display', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Apply the horizontal split line to the div box */
+#clock div::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #000000;
+  box-shadow: 0 1px 0 #000000;
+}
+
+.leftSide {
+  margin-right: 50px;
+}
+
+/* The hours and mintues digits */
+.middle{
+    position: relative;
+    font-size: 420px;
+    font-weight: bold;
+    transform: scaleX(1.1);
+}
+
+/* positioning the AM and PM and the Seconds digit */
+#ampm, #seconds{
+    position: absolute;
+    font-weight: bold;
+    margin: 30px;
+    font-size: 40px;
+}
+#ampm{
+    top: 80px;
+    left: 80px;
+}
+
+#seconds{
+    top: 470px;
+    right: 80px;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    #clock div {
+        width: 350px;
+        height: 60vh;
+        padding: 0 10px;
+    }
+    .middle {
+        font-size: 250px;
+    }
+    #ampm, #seconds {
+        font-size: 28px;
+        margin: 18px;
+    }
+    #ampm {
+        top: 40px;
+        left: 40px;
+    }
+    #seconds {
+        top: 320px;
+        right: 40px;
+    }
+}
+
+@media (max-width: 800px) {
+    body {
+        padding: 20px;
+    }
+    #clock {
+        height: 60vh;
+    }
+    #clock div {
+        width: 220px;
+        height: 40vh;
+        padding: 0 5px;
+        border-radius: 30px;
+    }
+    .middle {
+        font-size: 120px;
+    }
+    #ampm, #seconds {
+        font-size: 18px;
+        margin: 8px;
+    }
+    #ampm {
+        top: 18px;
+        left: 18px;
+    }
+    #seconds {
+        top: 150px;
+        right: 18px;
+    }
+}
